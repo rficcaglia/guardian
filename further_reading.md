@@ -16,3 +16,8 @@ Applications in Security](https://pdf.sciencedirectassets.com/272990/1-s2.0-S157
 * https://ieeexplore.ieee.org/document/8730354
 * http://laboratory.temporallogic.org/publications/
 * http://temporallogic.org/courses/AppliedFormalMethods/
+* https://arxiv.org/pdf/1903.06873.pdf
+* http://www.cs.colorado.edu/~srirams/papers/hybrid-systems-review-2019.pdf
+* http://sites.bu.edu/hyness/files/2015/08/CDC2014-Austin.pdf
+* https://ieeexplore.ieee.org/abstract/document/8599799
+* https://arxiv.org/pdf/1811.00175.pdf
