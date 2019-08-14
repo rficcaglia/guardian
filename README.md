@@ -18,4 +18,4 @@ Guardian is an omnibus repository for tooling to formally verify components of a
 
 * Certificate (Lifecycle) Management Verification
 * Supply Chain Management Verification
-* Verification of "Defense in Depth"
+* Verification of "Defense in Depth", e.g. CVE Impact Model
