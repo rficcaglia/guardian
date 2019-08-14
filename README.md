@@ -13,4 +13,4 @@ Guardian is an omnibus repository for tooling to formally verify components of a
 * [Kubernetes RBAC Policy Verification](https://github.com/cncf/sig-security/pull/242)
 * Kubernetes NetworkPolicy Verification
 * Kubernetes Admission Control Verfication
-
+* Certificate Lifecycle Management Verification
