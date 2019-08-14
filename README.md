@@ -8,9 +8,14 @@ Formal Verification of Cloud Native Components
 # Introduction
 Guardian is an omnibus repository for tooling to formally verify components of a cloud native system. As each component is fleshed out, it might become its own standalone project, or Guardian could become just a Swiss Army Knife of useful verification tools. TBD. Suggestions are welcome!
 
-## Current Sub-Projects
+## Current Sub-Projects Under Active Investigation
 
 * [Kubernetes RBAC Policy Verification](https://github.com/cncf/sig-security/pull/242)
 * Kubernetes NetworkPolicy Verification
 * Kubernetes Admission Control Verfication
-* Certificate Lifecycle Management Verification
+
+## Ideas for Future Sub-Project Work
+
+* Certificate (Lifecycle) Management Verification
+* Supply Chain Management Verification
+* Verification of "Defense in Depth"
