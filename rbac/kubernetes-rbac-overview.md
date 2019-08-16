@@ -1,0 +1,38 @@
+# Kubernetes RBAC
+
+## Overview
+
+Kubernetes RBAC Permissions are purely additive (there are no “deny” rules). (This is different from AWS IAM.) 
+They can be scoped as namespace only (Role) or cluster-wide (ClusterRole). Note, ClusterRoles have some additional 
+"extra-namespace" capabilities like Node permissions. These will need to be modeled asymmetrically (or perhaps
+use one consistent model with some non-cluster capabilities pruned for namespace specific roles?) 
+
+NOTE: in 1.9 ClusterRoles can be ["aggregated" or modified](https://github.com/kubernetes/community/pull/1219) 
+for extensibility. This will have to be modeled but maybe can be split out into a separate effort.
+
+Rules in Role definitions are sets of resources (APIs) and operations (verbs). Resources can be filtered by API 
+name (apiGroups).
+
+Roles are "bound" to Actors aka subjects (users, groups, or service accounts) via Cluster/RoleBindings. Subjects
+are defined by the authentication plugin, so are arbitrary strings, with the [special case of system: prefixes.](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#referring-to-subjects)
+[As of 1.5 k8s has a concept of authenticated and unauthenticated "anonymous" users](https://github.com/kubernetes/kubernetes/pull/32386).
+How will this affect modeling?
+
+There are also some [default "user facing" cluster roles](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles),
+["core component"](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#core-component-roles) roles, 
+[controller roles](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#controller-roles), and 
+["other" roles](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#other-component-roles) that 
+may need to be accounted for.
+
+Resources are things that the k8s APIs (or extensions) can act upon, e.g. Pods, Endpoints, Secrets, logs, etc.  
+Resources are referenced both by path-like snippets reflective of their API access to represent any instance of
+that particular class of resource, or by name to represent a specific instance of that resource type (resourceNames).
+
+Roles and Bindings are applied at startup and periodically refreshed based on the configuration of [auto-reconciliation](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#auto-reconciliation).
+How will this affect modeling?
+
+There is a "bootstrap" process by the API controller even before the RBAC components are up (or if RBAC is not enabled) whereby
+the default super user cluster-admin role must be used to add roles and role bindings to allow for other users to do stuff.
+
+NOTE: WARNING: MUCH WOW: "If your API server runs with the insecure port enabled (--insecure-port), you can also make API calls via that 
+port, which does not enforce authentication or authorization." Don't do that! :P
