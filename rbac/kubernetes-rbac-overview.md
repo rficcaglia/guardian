@@ -36,3 +36,25 @@ the default super user cluster-admin role must be used to add roles and role bin
 
 NOTE: WARNING: MUCH WOW: "If your API server runs with the insecure port enabled (--insecure-port), you can also make API calls via that 
 port, which does not enforce authentication or authorization." Don't do that! :P
+
+## RBAC Authorizer
+
+The implementation gathers an array of rules and ["visits"](https://en.wikipedia.org/wiki/Visitor_pattern) each rule and
+does the following:
+
+* checks for valid rule (eg is it nil)
+* checks if the request attributes refers to a resource (by type or specific name)
+* checks the verb
+* checks the API group
+* checks if the rule applies to the user/subject (eg exact user match, membership in a group, or service account exact match)
+
+If everything matches, then it is allowed. Since there is no "deny" semantics, the lack of an explicit rule means something 
+is denied. AWS IAM for example [uses explicit deny policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html)
+presumably because they combine Identity based policies with Resource based policies and hierarchical (SCP, aka OU) policies that can increase the complexity.  [Early kubernetes design discussions](https://github.com/kubernetes/kubernetes/issues/51862#issuecomment-326841219)
+asserted that Deny rules cause "surprising" results and add unnecessary complexity.  
+NOTE: [there is a webhook that can get around this to provide explicit deny](https://github.com/kubernetes/kubernetes/issues/51862).
+
+## Historical Notes
+
+* There was a [request for RBAC policy verification back in 2017](https://github.com/kubernetes/kubernetes/issues/47574) and [Jordan Liggitt said it would be useful](https://github.com/kubernetes/kubernetes/issues/47574#issuecomment-308897805). We should comment on that issue when we have something.
+
