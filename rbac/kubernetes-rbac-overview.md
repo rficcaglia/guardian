@@ -54,7 +54,13 @@ presumably because they combine Identity based policies with Resource based poli
 asserted that Deny rules cause "surprising" results and add unnecessary complexity.  
 NOTE: [there is a webhook that can get around this to provide explicit deny](https://github.com/kubernetes/kubernetes/issues/51862).
 
-## Historical Notes
+### [Webhooks](https://kubernetes.io/docs/reference/access-authn-authz/webhook/)
+
+> When faced with an authorization decision, the API Server POSTs a JSON- serialized authorization.k8s.io/v1beta1 SubjectAccessReview object describing the action. This object contains fields describing the user attempting to make the request, and either details about the resource being accessed or requests attributes.
+
+This allows external implementations of the RBAC Authorizer.  We will probably not include this in the V1 tooling, but noted here for the roadmap for V2+.
+
+### Historical Notes
 
 * There was a [request for RBAC policy verification back in 2017](https://github.com/kubernetes/kubernetes/issues/47574) and [Jordan Liggitt said it would be useful](https://github.com/kubernetes/kubernetes/issues/47574#issuecomment-308897805). We should comment on that issue when we have something.
 
