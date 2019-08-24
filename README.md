@@ -33,6 +33,7 @@ The general framework provided by Guardian consists of finding:
 * incorporating concurrency:
   * λ-calculus <sup>[[1]]</sup>
   * Π-calculus <sup>[[2]]</sup>
+* a metric space for inductive logic programming <sup>[[3]], [[4]]</sup>
 
 # Current Sub-Projects Under Active Investigation
 
@@ -49,3 +50,5 @@ The general framework provided by Guardian consists of finding:
 [0]: https://arxiv.org/pdf/1112.0347.pdf
 [1]: http://www.nyu.edu/projects/barker/Lambda/barendregt.94.pdf
 [2]: https://en.wikipedia.org/wiki/%CE%A0-calculus
+[3]: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.36.8300&rep=rep1&type=pdf
+[4]: https://pdfs.semanticscholar.org/938f/b983731047e2c53c5c1fb2dcc3766a093d08.pdf
