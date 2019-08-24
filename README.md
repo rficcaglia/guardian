@@ -16,9 +16,10 @@ P |= φ <sup>[[0]]</sup>
 or “P satisfies φ”, where P is a program, ie a computational process, and φ is a logic (a set of properties). 
 
 The "formal" activities in scope for Guardian projects in terms of this relation:
-• Guardian tooling MUST enable program verification - the task of proving that P |= φ.
-• Guardian tooling SHOULD assist with specification - the task of defining (a list of) properties φ to be satisfied by the program.
-• Guardian tooling MAY assist with program synthesis, ie the task of finding P given (a list of) φ.
+
+* Guardian tooling MUST enable program verification - the task of proving that P |= φ.
+* Guardian tooling SHOULD assist with specification - the task of defining (a list of) properties φ to be satisfied by the program.
+* Guardian tooling MAY assist with program synthesis, ie the task of finding P given (a list of) φ.
 
 The general framework provided by Guardian consists of finding:
 
