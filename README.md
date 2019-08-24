@@ -30,7 +30,9 @@ The general framework provided by Guardian consists of finding:
 
 ## Further Considerations
 
-* incorporating concurrency and λ-calculus <sup>[[1]]</sup>
+* incorporating concurrency:
+  * λ-calculus <sup>[[1]]</sup>
+  * Π-calculus <sup>[[2]]</sup>
 
 # Current Sub-Projects Under Active Investigation
 
@@ -46,3 +48,4 @@ The general framework provided by Guardian consists of finding:
 
 [0]: https://arxiv.org/pdf/1112.0347.pdf
 [1]: http://www.nyu.edu/projects/barker/Lambda/barendregt.94.pdf
+[2]: https://en.wikipedia.org/wiki/%CE%A0-calculus
