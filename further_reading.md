@@ -22,3 +22,11 @@ Applications in Security](https://pdf.sciencedirectassets.com/272990/1-s2.0-S157
 * http://sites.bu.edu/hyness/files/2015/08/CDC2014-Austin.pdf
 * https://ieeexplore.ieee.org/abstract/document/8599799
 * https://arxiv.org/pdf/1811.00175.pdf
+
+## Program Verification
+
+* https://www.microsoft.com/en-us/research/project/ironclad/
+* https://www.microsoft.com/en-us/research/project/dafny-a-language-and-program-verifier-for-functional-correctness/
+* https://www.microsoft.com/en-us/research/project/boogie-an-intermediate-verification-language/
+* https://agda.readthedocs.io/en/v2.6.0.1/getting-started/what-is-agda.html
+* https://www.hillelwayne.com/post/theorem-prover-showdown/
