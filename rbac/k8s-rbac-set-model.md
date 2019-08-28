@@ -80,10 +80,10 @@ Also sequents are sequences of logical formulas, not sets<sup>[[1]]</sup>. There
 As an example, let's assume a subject "alice" in role "r1" is requesting access "get" to a resource assigned to role binding "ω1". 
 A policy "p1" specifies that the resource request must have x<sub>1</sub> corresponding to:
 
-* a role fact requiring reuqest.subject is contained in ω1,
+* a role fact requiring request.subject is contained in ω1,
 * a role fact requiring request.verb is contained in r1,
 * a role fact requiring that request.resource is contained in r1 
-* an additonal environmental constraint fact, that the request.resource IP address is in a range r1. 
+* an additonal environmental constraint fact, that the request.resource IP address is in a range e1. 
 
 where (1,1,1,1) &rarr; {1}
 and all other bit strings, eg (0,1,1,1), (1,0,1,1), ..., (0,0,0,0) &rarr; {0}
