@@ -2,6 +2,13 @@
 
 ## Algorithmic Verification of RBAC Policy Specification
 * A user provides a specification (in datalog for now, maybe next in Rego)
+
+NOTE: 
+> Datalog bridges the gap between specification and implementation, i.e., a programmer specifies a problem 
+declaratively rather than describing it step-by-step, imperatively. A Datalog engine executes
+the specification for a set of input relations (also known as the extensional database) and produces an output 
+relation for a query ... Datalog engines used in program analysis are bddbddb, µZ, and LogicBlox. <sup>[[0]]</sup>
+
   * e.g., policy denies all "get" access to resources labeled "sensitive"
   * specification has Horn clauses for all required facts about the [RBAC model](/rbac/k8s-rbac-set-model.md)
 * The tool automatically checks validity of the specification
@@ -27,5 +34,8 @@
  * Reverse engineering use case
    * present the tool with an existing set of json, yaml, and/or Rego config files, and a datalog specification "result" (e.g. the RAM?)
    * parse configs into an AST and produce a RAM
+     * a concise set of relational algebra expressions,
+     * relation management statements, and control flow constructs
    * compare the RAMs?
    
+[0]: https://souffle-lang.github.io/pdf/cc.pdf
