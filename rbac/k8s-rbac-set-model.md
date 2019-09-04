@@ -94,7 +94,7 @@ Evaluating p1 = concat(&rho;<sub>p1</sub>(ω1), &chi;<sub>p1</sub>(ω1)) = (1,1,
 
 ### Roles
 
-RoleName(args) ← p ∧ q ∧ ... ∧ t ∧ [[P(args) ∧ [[Q(args) [[∧ ...]]]]]]
+RoleName(args) ← p ∧ q ∧ ... ∧ t ∧ [P(args) ∧ [Q(args) [∧ ...]]]
 
 The args are variables that are instantiated at runtime from information in the request and possibly lookup in external systems.
 
