@@ -94,7 +94,7 @@ Evaluating p1 = concat(&rho;<sub>p1</sub>(ω1), &chi;<sub>p1</sub>(ω1)) = (1,1,
 
 ### Roles
 
-RoleName(args) ← p ∧ q ∧ ... ∧ t ∧ [P(args) ∧ [Q(args) [∧ ...]]]
+RoleRef(args) ← resource ∧ verb [ ∧ P(args) ∧ [Q(args) [∧ ...]]]
 
 The args are variables that are instantiated at runtime from information in the request and possibly lookup in external systems.
 
@@ -104,7 +104,31 @@ Example:
 
 is expressed<sup>[[2]],[[3]]</sup> as:
 
-PodReader(resource, verb) <= (resource=='pod') & (verb=='GET')
+```python
+Resource('pod') # fact term
+Verb('GET') # fact term
+PodReader(Resource, Verb) <= (resource=Resource) & (verb=Verb) # implies not empty
+```
+
+
+### RoleBindings
+
+SomeRoleBinding(roleref, user, args) ← roleref [ ∧ P(args) ∧ [Q(args) [∧ ...]]]
+
+Example: 
+
+> kubectl create rolebinding bob-admin-binding --clusterrole=admin --user=bob 
+
+So expressing this and all underlying facts:
+
+```python
+AdminRole('pod', 'get') # RoleRef ... implicitly declares Resource = pod and Verb = get
+User('bob') # fact
+AdminBinding(AdminRole, User) <= (roleref=AdminRole) & (user=User)
+```
+
+### Queries
+
 
 
 [0]: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.459.8327
