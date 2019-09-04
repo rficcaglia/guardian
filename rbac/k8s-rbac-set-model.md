@@ -21,7 +21,7 @@ The kubernetes orchestration system is composed of a collection of services/reso
 be managed via the kubernetes API. A role is a named function that is bound with
 some subject; a role is specific to a set of objects/resources. 
 
-Definition: A role r ∈ R is a tuple (t, v, n) ∈ __R__<sub>s</sub> × A × N , where i ∈ __R__<sub>s</sub> is a resource type,
+Definition: A role r ∈ R is a tuple (i, v, n) ∈ __R__<sub>s</sub> × A × N , where i ∈ __R__<sub>s</sub> is a resource type,
 v ∈ A is a verb, n ∈ N is the name of the role.
 
 The name of a role is unique within the scope of its defining service. Note that in practice you can create a single role
@@ -39,7 +39,7 @@ Again ignoring cardinality > 1 and assume that all reasoning here implies enumer
 from all the syntactical "macro" binding definitions.
 
 We consider each environmental constraint e ∈ E as an atomic proposition about the system activated outside the control plane, 
-eg. node host IP address range.
+eg. node host IP address range, or a lookup in an external database/LDAP. The environmental constraint may need to be re-evaluated over time due to changes in the external data, but for simplicity we initially assume a snapshot is avaialbe and remains consistent (TODO: add temporal logic).
 
 ## Policies
 
@@ -90,6 +90,24 @@ and all other bit strings, eg (0,1,1,1), (1,0,1,1), ..., (0,0,0,0) &rarr; {0}
 
 Evaluating p1 = concat(&rho;<sub>p1</sub>(ω1), &chi;<sub>p1</sub>(ω1)) = (1,1,1,1) yields {1} and the request is allowed.
 
+## Horn Clauses
+
+### Roles
+
+RoleName(args) ← p ∧ q ∧ ... ∧ t ∧ [[P(args) ∧ [[Q(args) [[∧ ...]]]]]]
+
+The args are variables that are instantiated at runtime from information in the request and possibly lookup in external systems.
+
+Example:
+
+> role pod-reader --verb=get --resource=pods 
+
+is expressed<sup>[[2]],[[3]]</sup> as:
+
+PodReader(resource, verb) <= (resource=='pod') & (verb=='GET')
+
 
 [0]: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.459.8327
 [1]: https://en.wikipedia.org/wiki/Sequent
+[2]: https://sites.google.com/site/pydatalog/Online-datalog-tutorial
+[3]: https://sites.google.com/site/pydatalog/roadmap-and-change/documentation-of-version-81
