@@ -47,7 +47,7 @@ The general framework provided by Guardian consists of finding:
 * Supply Chain Management Verification
 * Verification of "Defense in Depth", e.g. CVE Impact Model
 * Istio and other Service Mesh policy
-  * especially where per dataum deny rules are needed, e.g. EMRs<sup></sup>
+  * especially where per dataum deny rules are needed, e.g. EMRs<sup>[[5]]</sup>
 
 [0]: https://arxiv.org/pdf/1112.0347.pdf
 [1]: http://www.nyu.edu/projects/barker/Lambda/barendregt.94.pdf
