@@ -26,8 +26,19 @@
  # Design Draft
  
  * Forward engineering use case
-   * use z3 python to read datalog horn clauses and verify specification using solver
-   * parse the datalog into an AST and from that produce abstract machine (aka Relational Algebra Machine)
+   * use z3 python or other existing interpreter to read datalog horn clauses and verify specification using solver
+     * parse the datalog into an AST and from that produce abstract machine (aka Relational Algebra Machine)
+   
+       * TBD: recursion?
+       * construct a set of ground atoms, called the Extensional Database (EDB) from all "body" predicates
+       * construct a set of rules called the Intensional database (IDB) from all "head" predicates
+       * derive relations from rules + EDB
+       * materialize/compute relations to answer queries:
+         * accept single literal "goals" (constraints)
+         * produce mapping from EDB facts to IDB facts (for a given goal)
+       * TBD: top down vs bottom up?
+         * construct proof trees from top to bottom (ie top down, best for goals)
+         * or, compute relations/mappings for all values from EDB
    * using code templates, meta-program/code gen actual json and/or yaml and/or Rego so you have a usable policy that implements the spec
  * Reverse engineering use case
    * present the tool with an existing set of json, yaml, and/or Rego config files, and a datalog specification "result" (e.g. the RAM?)
