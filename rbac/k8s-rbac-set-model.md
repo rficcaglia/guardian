@@ -92,9 +92,32 @@ Evaluating p1 = concat(&rho;<sub>p1</sub>(ω1), &chi;<sub>p1</sub>(ω1)) = (1,1,
 
 ## Horn Clauses
 
+Horn clauses of the general type 
+
+L :- L<sub>i</sub>, ... , L<sub>n</sub> 
+
+where L<sub>i</sub> is a literal of the form 
+
+p<sub>i</sub>(t<sub>j</sub>, ... , t<sub>k</sub>) 
+
+such that p<sub>i</sub> is called a predicate and t<sub>j</sub> are terms. A term is
+either a constant or a variable. The left-hand side of a Horn clause is called its head
+and right hand side is called its body. The body of a clause may be empty. Clauses with an
+empty body represent facts; clauses with at least one literal in the body represent rules. 
+By convention, constants and predicates begin with lowercase; variables with uppercase.
+
+A literal, fact, or clause which does not contain any variables is called "ground" or "fully ground": 
+all arguments are constants. A fact is a ground "atom". 
+ 
+TODO: Must we use a finite logic or not?
+Any finite program P must satisfy the following safety conditions: 
+
+  * Each fact of P is a ground atom; 
+  * Each variable which occurs in the head of a rule of P must also occur in the body of the same rule. (WHY?) 
+
 ### Roles
 
-RoleRef(args) ← resource ∧ verb [ ∧ P(args) ∧ [Q(args) [∧ ...]]]
+roleref(args) ← resource ∧ verb [ ∧ P(args) ∧ [Q(args) [∧ ...]]]
 
 The args are variables that are instantiated at runtime from information in the request and possibly lookup in external systems.
 
@@ -105,15 +128,15 @@ Example:
 is expressed<sup>[[2]],[[3]]</sup> as:
 
 ```python
-Resource('pod') # fact term
-Verb('GET') # fact term
-PodReader(Resource, Verb) <= (resource=Resource) & (verb=Verb) # implies not empty
+resource('pod') # fact term
+verb('GET') # fact term
+podreader(Resource, Verb) <= (resource=Resource) & (verb=Verb) # implies not empty
 ```
 
 
 ### RoleBindings
 
-SomeRoleBinding(roleref, user, args) ← roleref [ ∧ P(args) ∧ [Q(args) [∧ ...]]]
+somerolebinding(RoleRef, User, args) ← roleref [ ∧ P(args) ∧ [Q(args) [∧ ...]]]
 
 Example: 
 
@@ -122,9 +145,9 @@ Example:
 So expressing this and all underlying facts:
 
 ```python
-AdminRole('pod', 'get') # RoleRef ... implicitly declares Resource = pod and Verb = get
-User('bob') # fact
-AdminBinding(AdminRole, User) <= (roleref=AdminRole) & (user=User)
+adminrole('pod', 'get') # RoleRef ... implicitly declares Resource = pod and Verb = get
+user('bob') # fact
+adminbinding(AdminRole, User) <= (roleref=AdminRole) & (user=User)
 ```
 
 ### Queries
