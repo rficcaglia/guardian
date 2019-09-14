@@ -40,8 +40,10 @@ TBD: Is recursion needed for k8s rbac?
   * generate other problems corresponding to the right-hand side predicates of that rule; 
   * this process is continued until no new problems are generated
 * or, compute relations/mappings for all values from EDB (ie bottom up)
-  * apply the rules in a given program to the EDB, and produce al1 the possible 
+  * apply the rules in a given program to the EDB, and produce all the possible 
     consequences of the program, until no new fact can be deduced.
+  *  if the goal contains some bound argument, then only facts that match the goal 
+     constants are involved
   
 
 [0]: https://souffle-lang.github.io/pdf/cc.pdf
