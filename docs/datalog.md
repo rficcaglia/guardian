@@ -21,6 +21,17 @@ TBD: Is recursion needed for k8s rbac?
 * materialize/compute relations to answer queries/goals:
   * accept single literal "goals" (constraints)
   * produce mapping from EDB facts to IDB facts (for a given goal)
+  * Datalog only solves exact match and partial match queries.
+    * Exact Match Queries: match a ground/literal value. 
+      A fully ground query specifies a literal value for n attributes, 
+      and requires confirmation whether this fact is in the database. 
+    * Partial Match Queries: a match is required for each literal value specified 
+       but the other attributes can have any vaiue, ie. a "wild card" match. 
+    * NOT SUPPORTED
+      * Range Queries
+      * Metric/distance based queries (eg nearest match)
+      * String/substring queries
+      * missing data
 
 ### Top Down or Bottom Up?
 * construct proof trees from top to bottom (ie top down, best for goals)
