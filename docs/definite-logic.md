@@ -29,7 +29,7 @@ when α is true in every model of P.
 
 ASIDE: NOTE: P = IDB ∪ EDB
 
-## [Hebrand]() Interpretation<sup>[[0]]</sup>
+## [Hebrand Interpretation](https://en.wikipedia.org/wiki/Herbrand_interpretation)<sup>[[0]]</sup>
 
 ### [Example](https://en.wikipedia.org/wiki/Herbrand_structure)
 
