@@ -48,10 +48,9 @@
          * or, compute relations/mappings for all values from EDB (ie bottom up)
    * using code templates, meta-program/code gen actual json and/or yaml and/or Rego so you have a usable policy that implements the spec
  * Reverse engineering use case
-   * present the tool with an existing set of json, yaml, and/or Rego config files, and a datalog specification "result" (e.g. the RAM?)
-   * parse configs into an AST and produce a RAM
+   * present the tool with an existing set of json, yaml, and/or Rego config files;
+     produce a datalog specification "result" (e.g. the RAM?), ie. parse configs into an AST and produce a RAM
      * a concise set of relational algebra expressions,
      * relation management statements, and control flow constructs
-   * compare the RAMs?
    
 [0]: https://souffle-lang.github.io/pdf/cc.pdf
