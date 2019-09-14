@@ -33,7 +33,7 @@ ASIDE: NOTE: P = IDB ∪ EDB
 
 ### [Example](https://en.wikipedia.org/wiki/Herbrand_structure)
 
-## Least Hebrand Interpretation
+## Least Hebrand Interpretation<sup>[[1]]</sup>
 
 
 [0]: https://www.doc.ic.ac.uk/~mjs/teaching/KnowledgeRep491/Fixpoint_Definite_491-2x1.pdf
