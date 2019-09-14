@@ -37,3 +37,4 @@ ASIDE: NOTE: P = IDB ∪ EDB
 
 
 [0]: https://www.doc.ic.ac.uk/~mjs/teaching/KnowledgeRep491/Fixpoint_Definite_491-2x1.pdf
+[1]: https://books.google.com/books?id=LcOLqodW28EC&pg=PA231#v=onepage&q&f=false
