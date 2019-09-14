@@ -10,7 +10,7 @@ the semantics of Datalog is based on the choice of [a specific model](/docs/defi
 
 TBD: Is recursion needed for k8s rbac?
 
-## Datalog Program Interpreter (ie Evaluation of a Goal)
+## Datalog Program Interpreter (ie Evaluation of a Goal) see [[1]]
 * construct a set of ground atoms, called the Extensional Database (EDB) from all "body" predicates
 * construct a set of rules called the Intensional database (IDB) from all "head" predicates
 * derive relations from rules + EDB
@@ -47,4 +47,5 @@ TBD: Is recursion needed for k8s rbac?
   
 
 [0]: https://souffle-lang.github.io/pdf/cc.pdf
+[1]: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.428.967&rep=rep1&type=pdf
 
