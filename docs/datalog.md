@@ -10,7 +10,7 @@ the semantics of Datalog is based on the choice of [a specific model](/docs/defi
 
 TBD: Is recursion needed for k8s rbac?
 
-## Datalog Program Interpreter
+## Datalog Program Interpreter (ie Evaluation of a Goal)
 * construct a set of ground atoms, called the Extensional Database (EDB) from all "body" predicates
 * construct a set of rules called the Intensional database (IDB) from all "head" predicates
 * derive relations from rules + EDB
@@ -22,7 +22,16 @@ TBD: Is recursion needed for k8s rbac?
   * accept single literal "goals" (constraints)
   * produce mapping from EDB facts to IDB facts (for a given goal)
 
-## Top Down or Bottom Up?
+### Top Down or Bottom Up?
 * construct proof trees from top to bottom (ie top down, best for goals)
   * TBD: SLD resolution/backward chaining?
+  * The initial goal is matched with the left-hand side of some rule.
+  * generate other problems corresponding to the right-hand side predicates of that rule; 
+  * this process is continued until no new problems are generated
 * or, compute relations/mappings for all values from EDB (ie bottom up)
+  * apply the rules in a given program to the EDB, and produce al1 the possible 
+    consequences of the program, until no new fact can be deduced.
+  
+
+[0]: https://souffle-lang.github.io/pdf/cc.pdf
+
