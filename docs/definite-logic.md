@@ -29,11 +29,11 @@ when α is true in every model of P.
 
 ASIDE: NOTE: P = IDB ∪ EDB
 
-## [Hebrand Interpretation](https://en.wikipedia.org/wiki/Herbrand_interpretation)<sup>[[0]]</sup>
+## [Hebrand Interpretation](https://en.wikipedia.org/wiki/Herbrand_interpretation)<sup>[[0]],[[1]]</sup>
 
 ### [Example](https://en.wikipedia.org/wiki/Herbrand_structure)
 
-## Least Hebrand Interpretation<sup>[[1]]</sup>
+## Least Hebrand Interpretation
 
 
 [0]: https://www.doc.ic.ac.uk/~mjs/teaching/KnowledgeRep491/Fixpoint_Definite_491-2x1.pdf
