@@ -1,7 +1,7 @@
 # WIP: Outline
 
 ## Algorithmic Verification of RBAC Policy Specification
-* A user provides a specification (in datalog for now, maybe next in Rego) 
+* A user provides a specification (in [datalog](/docs/datalog.md) for now, maybe next in Rego) 
   * e.g., does a policy prevent "get" access to resources labeled "sensitive"
   * specification has Horn clauses for all required facts about the [RBAC model](/rbac/k8s-rbac-set-model.md)
 * The tool automatically checks validity of the specification
